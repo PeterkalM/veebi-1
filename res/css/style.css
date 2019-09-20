@@ -1,4 +1,34 @@
 /*Test123*/
-strong{
-    color: blue;
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc;
+}
+.Profiil_ja_andmed_klass{ /*Siin klassi hulgas on ka see arv 2.65, kuid ma ei tea, mis sellega peale hakata*/
+    height:300px; /*Profiili alale(ehk pilt+kirjeldus+arv2.65) on jäetud 300px, põhiliselt sellepärast, et see algne pilt on liiga suur imo */
+}
+#Profiil_ja_andmed{ /*See ID kehtib div-ile, mis hõlmab endas isikuandmetega listi ja pilti, algselt olid need kaks infokildu eraldi, vt. html kommentaare*/
+    box-sizing:border-box;
+    display:flex; /*Aitab asetada elemendid div sees vasakult paremale ja nende suurust muuta*/
+    height:90%; /*Ülejäänud 10% jäetud selle 2.65, kuidagi võiks selle sisse integreerida*/
+    margin: 10px; /*Praegu olen jätnud informatsioonile 10px margini, sest nii ei alga tekst vasakult küljest*/
+    padding:5px; /*Hoiab vahet pildi ja ääre vahel*/
+    align-items: center; /*Sätib pildi ja listi keskpunkti vertikaalselt keskmesse*/
+    border: 1px solid rgba(0,0,0,0.22);
+}
+#Profiil_ja_andmed > img{ /*Kehtib profiilipildile*/
+    box-sizing:border-box;
+    flex-grow: 1;
+    height:100%;
+    max-width: 275px;
+    margin:5px;
+}
+#Profiil_ja_andmed > ol{ /*Kehtib sellele listile, mis kirjeldab kasutajat*/
+    box-sizing:border-box;
+    flex-grow: 100;
+    max-width: 280px; /*Ilma selleta võtaks list enda alla kogu pildist paremale poole jääva ala ja siis näeks border halb välja*/
+    margin: 5px;
+    padding-top: 6px; /*Liigutab kasti borderit üles, annab listile rohkem ruumi*/
+    padding-bottom: 6px; /*left-margin millegipärast rikub listi keskme ära, ei soovita kasutada suurema vajaduseta */
+    border: 1px solid rgba(0,0,0,0.22);
 }
