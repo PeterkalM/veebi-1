@@ -1,53 +1,101 @@
-/*Test123*/
 html, body {
     margin: 0;
     padding: 0;
     background-color: #fcfcfc;
-}
-.profile { /*Siin klassi hulgas on ka see arv 2.65, kuid ma ei tea, mis sellega peale hakata*/
-    height: 300px; /*Profiili alale(ehk pilt+kirjeldus+arv2.65) on jäetud 300px, põhiliselt sellepärast, et see algne pilt on liiga suur imo */
-    margin: 20px 20px;
-}
-#picture-and-data { /*See ID kehtib div-ile, mis hõlmab endas isikuandmetega listi ja pilti, algselt olid need kaks infokildu eraldi, vt. html kommentaare*/
-    box-sizing: border-box;
-    display: flex; /*Aitab asetada elemendid div sees vasakult paremale ja nende suurust muuta*/
-    height: 90%; /*Ülejäänud 10% jäetud selle 2.65, kuidagi võiks selle sisse integreerida*/
-    /*margin: 10px; /*Praegu olen jätnud informatsioonile 10px margini, sest nii ei alga tekst vasakult küljest*/
-    padding: 5px; /*Hoiab vahet pildi ja ääre vahel*/
-    align-items: center; /*Sätib pildi ja listi keskpunkti vertikaalselt keskmesse*/
-    border: 1px solid rgba(0, 0, 0, 0.22);
-}
-#picture-and-data > img { /*Kehtib profiilipildile*/
-    box-sizing: border-box;
-    flex-grow: 1;
     height: 100%;
-    max-width: 275px;
-    margin: 7px;
 }
-#picture-and-data > ol { /*Kehtib sellele listile, mis kirjeldab kasutajat*/
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 10%;
     box-sizing: border-box;
-    flex-grow: 100;
-    max-width: 280px; /*Ilma selleta võtaks list enda alla kogu pildist paremale poole jääva ala ja siis näeks border halb välja*/
+    background-color: #1E6C93;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px ridge rgba(28, 110, 164, 0.37);
+}
+
+header p {
+    font-family: 'Lato', sans-serif;
+    color: aliceblue;
+    margin: 10px;
+    text-shadow: 0 0 4px black;
+}
+
+header + section {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 30px auto;
+    width: 80%;
+    height: 80%;
+}
+
+#main > * {
+    flex: 1 auto;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile img {
+    width: auto;
+    height: auto;
+    max-height: 300px;
+}
+
+.data > ol { /*Kehtib sellele listile, mis kirjeldab kasutajat*/
+    box-sizing: border-box;
     margin: 7px;
-    padding-top: 6px; /*Liigutab kasti borderit üles, annab listile rohkem ruumi*/
-    padding-bottom: 6px; /*left-margin millegipärast rikub listi keskme ära, ei soovita kasutada suurema vajaduseta */
+    padding: 10px 10px 10px 25px; /* annab listile rohkem ruumi*/
     border: 1px solid rgba(0, 0, 0, 0.22);
 }
+
 .grades {
     box-sizing: border-box;
     /*border: 1px solid rgba(0, 0, 0, 0.22);*/
     margin: 20px 20px;
     /*background-color: #a4cbff;*/
 }
-.grades > h1{
+
+.grades > h1 {
     margin: 5px 5px;
 }
+
 .table {
     border: 1px solid rgba(0, 0, 0, 0.22);
-    padding-top: 6px; /*Liigutab kasti borderit üles, annab listile rohkem ruumi*/
-    padding-bottom: 6px;
-    padding-left: 6px;
-    padding-right: 6px;
+    /*Liigutab kasti borderit üles, annab listile rohkem ruumi*/
+    padding: 6px;
     /*background-color: rgba(5, 118, 207, 0.38);*/
     /*margin: 5px 5px;*/
+}
+
+footer {
+    height: 10%;
+    background-color: #F2F2F2;
+    margin-top: 50px;
+}
+
+footer ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer li {
+    margin: auto 30px;
+}
+
+.links a {
+    color: #808080;
+    text-decoration: none;
 }
