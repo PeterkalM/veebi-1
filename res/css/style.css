@@ -59,9 +59,9 @@ header + section {
     border: 1px solid rgba(0, 0, 0, 0.22);
 }
 
-.grades {
+.table { /*h1 tiitel "courses" + tabel ainetega*/
     box-sizing: border-box;
-    /*border: 1px solid rgba(0, 0, 0, 0.22);*/
+    border: 1px solid rgba(0, 0, 0, 0.22);
     margin: 20px 20px;
     /*background-color: #a4cbff;*/
 }
@@ -70,10 +70,19 @@ header + section {
     margin: 5px 5px;
 }
 
-.table {
-    border: 1px solid rgba(0, 0, 0, 0.22);
-    /*Liigutab kasti borderit üles, annab listile rohkem ruumi*/
-    padding: 6px;
+.grades > h1 {
+    margin: 5px;
+    margin-left: 0px; /*Kirjutan margini vasakult üle, sest muidu jääks tiitlist allapoole jääv border vasakult poolikuks*/
+    padding-left: 5px; /*Asendan ülekirjutatud margini ala padding alaga(sest see lubab borderit suurendada)*/
+    padding-right: 100%; /*Et border läheks .grades ala lõpuni välja*/
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+}
+
+section .grades .table {
+    padding-top: 6px; /*Liigutab kasti borderit üles, annab listile rohkem ruumi*/
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
     /*background-color: rgba(5, 118, 207, 0.38);*/
     /*margin: 5px 5px;*/
 }
